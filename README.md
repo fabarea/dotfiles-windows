@@ -1,76 +1,46 @@
 # dotfiles-windows
 
+Nothing more than a README file for now.
+
 ```
 #################
 # Applications
 
-cinst Bitwarden
-cinst GoogleChrome
-cinst Firefox
-cinst Boinc
-cinst Atom
-  
-############## 
-# Development
-
-cinst windbg
-cinst ack
-
-#cinst NuGet.CommandLine
-
-#cinst linqpad5
-#cinst fiddler4
-cinst curl
-
-#cinst sourcetree
-#cinst virtualbox
-#cinst vagrant
-
-#cinst python3
-#cinst nodejs.install
-#cinst ruby
-#cinst ruby.devkit
-
-############
-# Multimedia
-
-cinst vlc
+choco install Bitwarden
+choco install GoogleChrome
+choco install Firefox
+choco install Boinc
+choco install Atom
+choco install phpstorm
+choco install webstorm
+choco install pycharm
+choco install vlc
+choco install hyper
+choco install docker
+choco install ZoomIt
+choco install 1Password
+#choco install console2
 
 ############
 # Essentials
 
-#cinst vim
-#cinst sudo
-#cinst gnuwin
-#cinst console2
+#choco install 7zip
+#choco install 7zip.commandline
 
-#cinst checksum
-
-cinst 7zip
-cinst 7zip.commandline
-
-#cinst foxitreader
-
-#cinst markpad
-#cinst sublimetext3
-
-#cinst totalcommander
-#cinst rdcman
+choco install foxitreader
+choco install markpad
+choco install sublimetext3
+#choco install totalcommander
 
 ##########
 # Sysadmin
 
-#cinst sysinternals
-#cinst lockhunter
+#choco install sysinternals
+#choco install lockhunter
 
-cinst ultravnc
-cinst teamviewer
+choco install ultravnc
+choco install teamviewer
 
-#cinst nmap
-#cinst wireshark
-#cinst windirstat
-#cinst dumeter
-
-#cinst winscp
-#cinst putty
+#choco install winscp
+#choco install putty
 ```
