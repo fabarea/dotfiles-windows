@@ -19,6 +19,8 @@ choco install hyper
 choco install docker
 choco install ZoomIt
 choco install 1Password
+choco install autohotkey
+choco install git
 #choco install console2
 
 ############
