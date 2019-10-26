@@ -1,0 +1,151 @@
+[alias]
+
+  a   = commit --amend
+  br  = branch
+  c   = commit
+  ca  = !git add -A && git commit       # Commit all changes.
+  d   = diff
+  dc  = diff --cached
+  f   = fetch
+  g   = log --graph --pretty=custom       # Show custom graph.
+  git = !exec git               # Allow `$ git git git...`
+  l   = log --pretty=custom           # Show custom log.
+  lc  = shortlog --email --numbered --summary # List contributors.
+  p   = push
+  r   = rebase
+  s   = status
+  w   = instaweb --httpd=webrick        # Start web-based visualizer.
+
+  co = checkout
+  ci = commit --verbose
+  cia = commit --amend
+  st = status
+  br = branch
+
+  # BRANCH
+  track = for-each-ref --format='%(refname:short)   <---   %(upstream:short)' refs/heads
+  tr = for-each-ref --format='%(refname:short)   <---   %(upstream:short)' refs/heads
+
+  # DIFF
+  df = diff
+  dfc = diff --cached
+
+  # MISC
+  type = cat-file -t
+  dump = cat-file -p
+
+
+  # With rebase. Possible option --no-rebase
+  pl = pull --rebase
+
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  # Find commits by source code.
+
+  cc = "!f() { \
+    git log --pretty=custom --decorate --date=short -S\"$1\"; \
+  }; f"
+
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  # Find commits by commit message.
+
+  cm = "!f() { \
+    git log --pretty=custom --decorate --date=short --grep=\"$1\"; \
+  }; f"
+
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+[color]
+  ui = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+
+[color "branch"]
+
+  current = green bold
+  local = green
+  remote = yellow
+
+[color "diff"]
+
+  frag = magenta
+  meta = yellow
+
+  new = green
+  old = red
+
+  newMoved = cyan
+  oldMoved = blue
+
+[core]
+
+  abbrev = 12
+  attributesfile = ~/.gitattributes
+  #autocrlf = input
+  excludesfile = ~/.gitignore
+
+  autocrlf = true
+  #safecrlf = true
+  filemode = false
+
+[diff]
+
+  # Show blocks of moved text of at least 20
+  # alphanumeric characters differently than adds/deletes.
+  #
+  # https://git-scm.com/docs/git-diff#git-diff-zebra
+
+  colorMoved = zebra
+
+[diff "bin"]
+
+  # Use `hexdump` to diff binary files.
+
+  textconv = hexdump -v -C
+
+[pretty]
+
+  custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)"
+  #           │    │      │      │       └─ author name
+  #           │    │      │      └─ message
+  #           │    │      └─ date (relative)
+  #           │    └─ decorations (branch, heads or tags)
+  #           └─ hash (abbreviated)
+
+[push]
+
+  # Make `git push` automatically push relevant
+  # annotated tags when pushing branches out.
+
+  followTags = true
+
+[user]
+
+  # Don't guess the user's identity.
+  # https://github.com/git/git/blob/90f7b16b3adc78d4bbabbd426fb69aa78c714f71/Documentation/config.txt#L2847-L2855
+
+  useConfigOnly = true
+
+[include]
+
+  # Load local configs.
+  # https://git-scm.com/docs/git-config#_includes
+  #
+  # [!] The following needs to remain at the end of this file in
+  #   order to allow any of the above configs to be overwritten
+  #   by the local ones
+
+  path = ~/.gitconfig.local
+
+[mergetool]
+  keepBackup = true
+[branch "master"]
+  rebase = true
+[rebase]
+  stat = true
+[push]
+  default = simple

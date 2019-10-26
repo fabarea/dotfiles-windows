@@ -1,48 +1,46 @@
 # dotfiles-windows
 
-Nothing more than a README file for now.
+## Usage
+
+As administrator run this command:
 
 ```
-#################
-# Applications
-
-choco install Bitwarden
-choco install GoogleChrome
-choco install Firefox
-choco install Boinc
-choco install Atom
-choco install phpstorm
-choco install webstorm
-choco install pycharm
-choco install vlc
-choco install hyper
-choco install docker
-choco install ZoomIt
-choco install 1Password
-choco install autohotkey
-choco install git
-#choco install console2
-
-############
-# Essentials
-
-#choco install 7zip
-#choco install 7zip.commandline
-
-choco install foxitreader
-choco install markpad
-choco install sublimetext3
-#choco install totalcommander
-
-##########
-# Sysadmin
-
-#choco install sysinternals
-#choco install lockhunter
-
-choco install ultravnc
-choco install teamviewer
-
-#choco install winscp
-#choco install putty
+C:\Users\%USERNAME%\.dotfiles\src\chocolatey-packages.cmd
 ```
+
+## Installation
+
+```
+git clone git@github.com:fabarea/dotfiles-windows.git .dotfiles
+```
+
+## Post installation
+
+Manual steps:
+
+* Create `.gitconfig.local` for local settings
+
+```
+nano .gitconfig.local
+```
+... and paste / adjuste the following code
+
+```
+[user]
+	name = Fabien Udriot
+	email = fabulus@omic.ch
+	date = YYYY
+```
+
+## Symlinks files
+
+```
+ln -s .dotfiles/files/bash/bash_profile .bash_pro
+ln -s  .dotfiles/files/git/gitconfig .gitconfig
+ln -s  .dotfiles/files/tig/tigrc .tigrc
+```
+
+## Todo
+
+* Export Atom, VS Code, SublimeText, etc... preference to this repository
+* Add script to symlink dotfiles in git bash
