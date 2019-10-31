@@ -35,7 +35,8 @@ nano .gitconfig.local
 ## Symlinks files
 
 ```
-ln -s .dotfiles/files/bash/bash_profile .bash_pro
+ln -s .dotfiles/files/bash/bash_profile .bash_profile
+ln -s .dotfiles/files/bash/profile .profile
 ln -s  .dotfiles/files/git/gitconfig .gitconfig
 ln -s  .dotfiles/files/tig/tigrc .tigrc
 ```
